@@ -4,7 +4,7 @@ import numpy as np
 from statistics import mean
 
 
-TCP_IP = "169.254.75.40"
+TCP_IP = "169.254.75.172"
 TCP_Port = 5025
 device = socket.socket()
 
@@ -36,7 +36,7 @@ def get_voltage(range):
     time.sleep(.15)
     reading = query('MEAS:VOLT? "defbuffer1", READ')
     #send('OUTP OFF')
-    return reading
+    return float(reading)
 
 def get_avg_voltage(range):
     if range == None:
@@ -147,4 +147,5 @@ def sense_mode(mode):
         raise Exception("sense_mode() takes 'remote' or 'local' arguments")
 
 lan_connection(TCP_IP)
+
 
