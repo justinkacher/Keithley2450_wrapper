@@ -4,7 +4,7 @@ import numpy as np
 from statistics import mean
 
 
-TCP_IP = "169.254.75.172"
+TCP_IP = "169.254.201.87"
 TCP_Port = 5025
 device = socket.socket()
 
